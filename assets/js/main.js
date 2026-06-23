@@ -332,7 +332,9 @@ function buildFilms(data) {
       </div>
       <div class="film-grid${anyVertical ? " film-grid--vertical" : ""}"></div>`;
     const grid = $(".film-grid", sec);
-    g.videos.forEach((v) => grid.appendChild(filmCard(v)));
+    // 置頂影片排在前面（穩定排序，其餘維持原順序）
+    const vids = [...g.videos].sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));
+    vids.forEach((v) => grid.appendChild(filmCard(v)));
     wrap.appendChild(sec);
   });
   observeReveals(wrap);
@@ -351,8 +353,9 @@ function filmCard(v) {
          <span class="ph-icon">▶</span>
          <span class="ph-text">待補 YouTube 連結</span>
        </div>`;
+  const pin = v.pinned ? `<span class="film__pin">★ 置頂</span>` : "";
   card.innerHTML = `
-    <div class="film__frame film__frame--${orient}">${frame}</div>
+    <div class="film__frame film__frame--${orient}">${pin}${frame}</div>
     <div class="film__meta">
       <span class="film__title">${v.title}</span>
       <span class="film__badge">${orient === "vertical" ? "VERTICAL" : "16:9"}</span>
