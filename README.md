@@ -1,8 +1,8 @@
 # HSU — 攝影師形象網站
 
-車輛 · 風景 · 動物 · 活動 的攝影與影像作品集。純靜態網站，部署於 GitHub Pages。
+> 車輛 · 風景 · 動物 · 活動 的攝影與影像作品集。純靜態網站，部署於 GitHub Pages。
 
-### 補 YouTube 影片連結
+## 補 YouTube 影片連結
 影片全部走 YouTube 嵌入。打開 `assets/data/videos.json`，把每支影片的 `youtubeId` 換成你的 YouTube 影片 ID：
 
 - 網址 `https://youtu.be/AbC123xyz` → ID 是 `AbC123xyz`
@@ -15,7 +15,7 @@
 `orientation` 填 `landscape`（橫向 16:9）或 `vertical`（直向 9:16，Shorts/Reels）。
 `youtubeId` 留空會顯示「待補連結」佔位卡，不影響網站運作。
 
-### 新增 / 更換照片
+## 新增 / 更換照片
 1. 把原圖丟進 `作品集/照/` 對應的分類資料夾（`車`、`風景`、`動物`、`活動`；`車` 下可再分車款子資料夾）。
 2. 執行優化指令，會自動壓縮、產生縮圖、更新清單：
    ```bash
