@@ -1,0 +1,28 @@
+{
+  "_howto": "把每支影片的 youtubeId 換成你的 YouTube 影片 ID（Shorts 網址 https://youtube.com/shorts/AbC123xyz 的 AbC123xyz，或一般網址 watch?v= 後那串）。orientation 可填 landscape（橫向 16:9）或 vertical（直向 9:16，Shorts/Reels 用）。youtubeId 留空會顯示『待補連結』佔位卡，不影響網站運作。",
+  "groups": [
+    {
+      "id": "featured",
+      "title": "精選影像",
+      "subtitle": "FEATURED FILMS",
+      "videos": [
+        { "title": "FPV", "youtubeId": "MvkOQ4Ycmrw", "orientation": "vertical" },
+        { "title": "K6", "youtubeId": "w-iwaV86n28", "orientation": "vertical" },
+        { "title": "Vertical", "youtubeId": "KrR4Ocv9GQA", "orientation": "vertical" },
+        { "title": "翹孤", "youtubeId": "9TYNT3ccOdY", "orientation": "vertical" }
+      ]
+    },
+    {
+      "id": "reels",
+      "title": "Reels",
+      "subtitle": "SHORT CLIPS",
+      "videos": [
+        { "title": "402 R35", "youtubeId": "Ndkx1icHiYU", "orientation": "vertical" },
+        { "title": "Ace Pro 2", "youtubeId": "Rn_YJ40S6R8", "orientation": "vertical" },
+        { "title": "Color Grading", "youtubeId": "ewu6tMqZi64", "orientation": "vertical" },
+        { "title": "MOVMAX", "youtubeId": "DN595KIlyRc", "orientation": "vertical" },
+        { "title": "貓村", "youtubeId": "N4IwkHVzFMo", "orientation": "vertical" }
+      ]
+    }
+  ]
+}

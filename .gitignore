@@ -1,0 +1,8 @@
+/作品集
+node_modules/
+npm-debug.log*
+*.log
+scripts/*.log
+.DS_Store
+Thumbs.db
+yt.md

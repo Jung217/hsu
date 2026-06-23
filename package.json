@@ -1,0 +1,13 @@
+{
+  "name": "hsu-photography",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "HSU 攝影師形象網站 — 圖片優化工具",
+  "scripts": {
+    "optimize": "node scripts/optimize.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

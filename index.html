@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HSU — 攝影 · 影像</title>
+  <meta name="description" content="HSU 攝影師作品集：車輛、風景、動物、活動攝影與影像作品。" />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HSU — 攝影 · 影像" />
+  <meta property="og:description" content="車輛 · 風景 · 動物 · 活動 — 攝影與影像作品集" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- 首屏 Hero 主圖預載（加速 LCP） -->
+  <link rel="preload" as="image" href="assets/photos/cars/cars-001.jpg" fetchpriority="high" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">跳到主內容</a>
+
+  <!-- 載入遮罩 -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <span class="loader__word">HSU</span>
+  </div>
+
+  <!-- 導覽列 -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__logo" aria-label="回到首頁">HSU<span class="nav__logo-dot">.</span></a>
+    <nav class="nav__links" id="navLinks" aria-label="主選單">
+      <a href="#work" class="nav__link">作品集</a>
+      <a href="#films" class="nav__link">影片</a>
+      <a href="#about" class="nav__link">關於</a>
+      <a href="#contact" class="nav__link">聯繫</a>
+      <a href="#" class="nav__link nav__link--ig" data-ig target="_blank" rel="noopener">Instagram ↗</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero__bg" id="heroBg" aria-hidden="true">
+        <img class="slide is-active" src="assets/photos/cars/cars-001.jpg" alt="" fetchpriority="high" decoding="async" />
+      </div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="hero__kicker">PHOTOGRAPHY &amp; FILM — TAIWAN</p>
+        <h1 class="hero__title">HSU</h1>
+        <p class="hero__lead">用一顆鏡頭，把會跑的、會動的、會消失的瞬間留下來。</p>
+        <div class="hero__cta">
+          <a href="#work" class="btn btn--solid">看作品 <span aria-hidden="true">→</span></a>
+          <a href="#contact" class="btn btn--ghost">合作邀約</a>
+        </div>
+      </div>
+
+      <!-- 跑馬燈 -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>CARS</span><span class="dot">●</span><span>SCENERY</span><span class="dot">●</span>
+          <span>ANIMALS</span><span class="dot">●</span><span>EVENTS</span><span class="dot">●</span>
+          <span>CARS</span><span class="dot">●</span><span>SCENERY</span><span class="dot">●</span>
+          <span>ANIMALS</span><span class="dot">●</span><span>EVENTS</span><span class="dot">●</span>
+        </div>
+      </div>
+
+      <a href="#work" class="hero__scroll" aria-label="向下捲動">
+        <span>SCROLL</span>
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- 作品集 -->
+    <section class="section work" id="work">
+      <div class="section__head">
+        <p class="section__index">01 — WORK</p>
+        <h2 class="section__title">作品集</h2>
+        <p class="section__desc">每一張都是真的去現場、等對的光、按下快門換來的。點圖可放大瀏覽。</p>
+      </div>
+
+      <div class="filters" id="workFilters" role="group" aria-label="作品分類"></div>
+      <div class="filters filters--sub" id="workSubFilters" role="group" aria-label="子分類" hidden></div>
+
+      <div class="gallery" id="gallery"></div>
+      <p class="gallery__empty" id="galleryEmpty" hidden>此分類暫無照片。</p>
+      <p class="sr-only" id="galleryStatus" aria-live="polite" aria-atomic="true"></p>
+    </section>
+
+    <!-- 影片 -->
+    <section class="section films" id="films">
+      <div class="section__head">
+        <p class="section__index">02 — FILM</p>
+        <h2 class="section__title">影片</h2>
+        <p class="section__desc">動態作品，全部放在 YouTube 串流播放。</p>
+      </div>
+      <div class="films__groups" id="filmsGroups"></div>
+    </section>
+
+    <!-- 關於 -->
+    <section class="section about" id="about">
+      <div class="about__grid">
+        <div class="about__left">
+          <p class="section__index">03 — ABOUT</p>
+          <h2 class="section__title">關於 HSU</h2>
+        </div>
+        <div class="about__right">
+          <p class="about__lead">我拍車、拍風景、拍會動的生命，也拍活動現場。喜歡高反差、有個性的畫面——讓被拍的東西「夠帥」是我的標準。</p>
+          <p class="about__text">從靜態棚拍到街上的動態追焦，從空拍 FPV 到地面跟拍，照片與影片我都做。如果你有一台想被好好記錄的車、一場想被留下的活動，或一個需要影像的點子，歡迎聊聊。</p>
+          <ul class="about__services">
+            <li><strong>車輛攝影</strong><span>靜態 / 動態追焦</span></li>
+            <li><strong>風景 · 動物</strong><span>自然光影像</span></li>
+            <li><strong>活動紀錄</strong><span>現場 · 人像</span></li>
+            <li><strong>影像製作</strong><span>FPV · 跟拍 · 調色</span></li>
+          </ul>
+          <p class="about__note">＊ 動態車拍需自備攝影車與司機。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 聯繫 -->
+    <section class="section contact" id="contact">
+      <p class="section__index">04 — CONTACT</p>
+      <h2 class="contact__title">一起拍點<br />帥的東西。</h2>
+      <p class="contact__lead">所有合作、邀約、報價，私訊 Instagram 最快。</p>
+      <div class="contact__actions">
+        <a href="#" class="btn btn--solid btn--lg" data-ig target="_blank" rel="noopener">
+          Instagram <span data-ig-handle>@hsu</span> ↗
+        </a>
+        <a href="#" class="btn btn--ghost btn--lg" data-email hidden>Email</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="footer__brand">HSU<span class="nav__logo-dot">.</span></span>
+    <span class="footer__copy">© <span id="year">2026</span> HSU Photography. All rights reserved.</span>
+    <a href="#home" class="footer__top">回到頂部 ↑</a>
+  </footer>
+
+  <!-- 燈箱 -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="照片檢視" hidden>
+    <button class="lightbox__btn lightbox__close" id="lbClose" aria-label="關閉">✕</button>
+    <button class="lightbox__btn lightbox__prev" id="lbPrev" aria-label="上一張">‹</button>
+    <button class="lightbox__btn lightbox__next" id="lbNext" aria-label="下一張">›</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" id="lbImg" alt="" />
+      <figcaption class="lightbox__caption">
+        <span id="lbCat"></span>
+        <span id="lbCount" class="lightbox__count"></span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
