@@ -347,7 +347,7 @@ function filmCard(v) {
          <span class="ph-icon">▶</span>
          <span class="ph-text">待補 YouTube 連結</span>
        </div>`;
-  const pin = v.pinned ? `<span class="film__pin">★ 置頂</span>` : "";
+  const pin = v.pinned ? `<span class="film__pin">★ 精選</span>` : "";
   card.innerHTML = `
     <div class="film__frame film__frame--${orient}">${pin}${frame}</div>
     <div class="film__meta">
