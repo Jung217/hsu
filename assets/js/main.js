@@ -321,22 +321,16 @@ function step(dir) {
 function buildFilms(data) {
   const wrap = $("#filmsGroups");
   wrap.innerHTML = "";
-  (data.groups || []).forEach((g) => {
-    const sec = document.createElement("div");
-    sec.className = "films__group reveal";
-    const anyVertical = g.videos.some((v) => v.orientation === "vertical");
-    sec.innerHTML = `
-      <div class="films__group-head">
-        <h3 class="films__group-title">${g.title}</h3>
-        <span class="films__group-sub">${g.subtitle || ""}</span>
-      </div>
-      <div class="film-grid${anyVertical ? " film-grid--vertical" : ""}"></div>`;
-    const grid = $(".film-grid", sec);
-    // 置頂影片排在前面（穩定排序，其餘維持原順序）
-    const vids = [...g.videos].sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));
-    vids.forEach((v) => grid.appendChild(filmCard(v)));
-    wrap.appendChild(sec);
-  });
+  // 支援扁平 videos 清單，或舊的 groups 結構（合併成單一影片牆）
+  const videos = data.videos || (data.groups || []).flatMap((g) => g.videos || []);
+  if (!videos.length) return;
+  const anyVertical = videos.some((v) => v.orientation === "vertical");
+  const grid = document.createElement("div");
+  grid.className = "film-grid reveal" + (anyVertical ? " film-grid--vertical" : "");
+  // 置頂影片排在前面（穩定排序，其餘維持原順序）
+  const vids = [...videos].sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));
+  vids.forEach((v) => grid.appendChild(filmCard(v)));
+  wrap.appendChild(grid);
   observeReveals(wrap);
 }
 

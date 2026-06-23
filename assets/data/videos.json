@@ -1,27 +1,13 @@
 {
-  "_howto": "把每支影片的 youtubeId 換成你的 YouTube 影片 ID（Shorts 網址 https://youtube.com/shorts/AbC123xyz 的 AbC123xyz）。orientation 可填 landscape（16:9）或 vertical（9:16，Shorts）。pinned:true 會置頂並顯示『置頂』標籤。youtubeId 留空會顯示『待補連結』佔位卡。",
-  "groups": [
-    {
-      "id": "featured",
-      "title": "精選影像",
-      "subtitle": "FEATURED FILMS",
-      "videos": [
-        { "title": "北海岸 Civic", "youtubeId": "uw8DOzDO2sc", "orientation": "vertical", "pinned": true },
-        { "title": "JET SL", "youtubeId": "ha5eqD6daTs", "orientation": "vertical", "pinned": true },
-        { "title": "翹孤", "youtubeId": "bxZkk5V9ZgE", "orientation": "vertical" },
-        { "title": "東北角 FPV", "youtubeId": "maUkJ3O6BkE", "orientation": "vertical" }
-      ]
-    },
-    {
-      "id": "reels",
-      "title": "Reels",
-      "subtitle": "SHORT CLIPS",
-      "videos": [
-        { "title": "貓村", "youtubeId": "WClGcZ_FY10", "orientation": "vertical" },
-        { "title": "402 GTR", "youtubeId": "vk4ToCqKVw0", "orientation": "vertical" },
-        { "title": "JET SL · Ace Pro 2", "youtubeId": "WWk7AsyHofA", "orientation": "vertical" },
-        { "title": "JET SL", "youtubeId": "fFntVb_tNm8", "orientation": "vertical" }
-      ]
-    }
+  "_howto": "把每支影片的 youtubeId 換成你的 YouTube 影片 ID（Shorts 網址 https://youtube.com/shorts/AbC123xyz 的 AbC123xyz）。orientation 可填 landscape（16:9）或 vertical（9:16，Shorts）。pinned:true 會置頂並顯示『置頂』標籤。youtubeId 留空會顯示『待補連結』佔位卡。影片依此清單順序排列（置頂者自動排到最前）。",
+  "videos": [
+    { "title": "北海岸 Civic", "youtubeId": "uw8DOzDO2sc", "orientation": "vertical", "pinned": true },
+    { "title": "JET SL", "youtubeId": "ha5eqD6daTs", "orientation": "vertical", "pinned": true },
+    { "title": "翹孤", "youtubeId": "bxZkk5V9ZgE", "orientation": "vertical" },
+    { "title": "東北角 FPV", "youtubeId": "maUkJ3O6BkE", "orientation": "vertical" },
+    { "title": "貓村", "youtubeId": "WClGcZ_FY10", "orientation": "vertical" },
+    { "title": "402 GTR", "youtubeId": "vk4ToCqKVw0", "orientation": "vertical" },
+    { "title": "JET SL · Ace Pro 2", "youtubeId": "WWk7AsyHofA", "orientation": "vertical" },
+    { "title": "JET SL", "youtubeId": "fFntVb_tNm8", "orientation": "vertical" }
   ]
 }
